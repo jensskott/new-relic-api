@@ -23,7 +23,7 @@ type ListAlertChannels struct {
 func (s *Client) ListAlertChannels() (ListAlertChannels, error) {
 	var data ListAlertChannels
 
-	fullUrl := fmt.Sprintf("%s/%s", *s.BaseUrl, "v2/alerts_channels.json")
+	fullUrl := fmt.Sprintf("%s/v2/alerts_channels.json", *s.BaseUrl)
 
 	req, err := http.NewRequest("GET", fullUrl, nil)
 	if err != nil {
