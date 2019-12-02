@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func (s *Client) CreateAlertsPolicy(payload AlertsPolicyPayload) (AlertsPolicies, error) {
+func (s *Client) CreateAlertsPolicies(payload AlertsPoliciesPayload) (AlertsPolicies, error) {
 	var data AlertsPolicies
 
 	if err := payload.validate(); err != nil {
@@ -39,7 +39,7 @@ func (s *Client) CreateAlertsPolicy(payload AlertsPolicyPayload) (AlertsPolicies
 	return data, nil
 }
 
-func (p *AlertsPolicyPayload) validate() error {
+func (p *AlertsPoliciesPayload) validate() error {
 	if p.Policy.Name == "" {
 		return errors.New("configuration name missing")
 	}

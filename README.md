@@ -8,6 +8,8 @@ Examples in the example folder
 Implemented functions:
 
 * alert channels
+* alert policies
+* alert conditions
 
 ## Development
 

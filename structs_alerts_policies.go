@@ -10,7 +10,7 @@ type AlertsPolicies struct {
 	} `json:"policies"`
 }
 
-type AlertsPolicyPayload struct {
+type AlertsPoliciesPayload struct {
 	Policy Policy `json:"policy"`
 }
 

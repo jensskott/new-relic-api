@@ -7,18 +7,18 @@ import (
 	"net/http"
 )
 
-func (s *Client) UpdateAlertsPolicies(payload AlertsPoliciesPayload) (AlertsPolicies, error) {
-	var data AlertsPolicies
+func (s *Client) UpdateAlertsConditions(payload AlertsConditionsPayload) (AlertsConditions, error) {
+	var data AlertsConditions
 
 	if err := payload.validate(); err != nil {
-		return AlertsPolicies{}, err
+		return AlertsConditions{}, err
 	}
 
-	fullUrl := fmt.Sprintf("%s/v2/alerts_policies.json", *s.BaseUrl)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions.json", *s.BaseUrl)
 
 	body, err := json.Marshal(payload)
 	if err != nil {
-		return AlertsPolicies{}, err
+		return AlertsConditions{}, err
 	}
 
 	req, err := http.NewRequest("PUT", fullUrl, bytes.NewBuffer(body))
@@ -28,11 +28,11 @@ func (s *Client) UpdateAlertsPolicies(payload AlertsPoliciesPayload) (AlertsPoli
 
 	resp, err := s.doRequest(req)
 	if err != nil {
-		return AlertsPolicies{}, err
+		return AlertsConditions{}, err
 	}
 
 	if err := json.Unmarshal(resp, &data); err != nil {
-		return AlertsPolicies{}, err
+		return AlertsConditions{}, err
 	}
 
 	return data, nil

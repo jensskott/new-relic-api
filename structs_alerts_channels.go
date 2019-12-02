@@ -18,7 +18,7 @@ type AlertsChannels struct {
 	} `json:"links"`
 }
 
-type CreateChannelsPayload struct {
+type ChannelsPayload struct {
 	Channel Channel `json:"channel"`
 }
 

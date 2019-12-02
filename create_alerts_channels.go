@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func (s *Client) CreateAlertsChannels(payload CreateChannelsPayload) (AlertsChannels, error) {
+func (s *Client) CreateAlertsChannels(payload ChannelsPayload) (AlertsChannels, error) {
 	var data AlertsChannels
 
 	if err := payload.validate(); err != nil {
@@ -39,7 +39,7 @@ func (s *Client) CreateAlertsChannels(payload CreateChannelsPayload) (AlertsChan
 	return data, nil
 }
 
-func (p *CreateChannelsPayload) validate() error {
+func (p *ChannelsPayload) validate() error {
 	if p.Channel.Name == "" {
 		return errors.New("configuration name missing")
 	}
