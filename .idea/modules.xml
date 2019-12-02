@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../new-relic-api/.idea/new-relic-api.iml" filepath="$PROJECT_DIR$/../new-relic-api/.idea/new-relic-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/new-relic-api.iml" filepath="$PROJECT_DIR$/.idea/new-relic-api.iml" />
     </modules>
   </component>
 </project>
