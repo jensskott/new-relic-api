@@ -16,7 +16,7 @@ type Client struct {
 	httpClient *http.Client
 }
 
-func New(apiKey string) (*Client, error) {
+func New(apiKey string) *Client {
 	h := &http.Client{
 		Timeout: 20 * time.Second,
 	}
@@ -25,7 +25,7 @@ func New(apiKey string) (*Client, error) {
 		BaseUrl:    convert.Str("https://api.newrelic.com"),
 		ApiKey:     convert.Str(apiKey),
 		httpClient: h,
-	}, nil
+	}
 }
 
 func (s *Client) doRequest(req *http.Request) ([]byte, error) {
