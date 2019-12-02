@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	new_relic_api "stash.massiveinteractive.com/to/new-relic-api"
@@ -13,7 +14,7 @@ func main() {
 
 	config := make(map[string]string)
 
-	config["recipients"] = "test@test.test"
+	config["recipients"] = "test@massive.co"
 	config["include_json_attachment"] = "true"
 
 	body := new_relic_api.Payload{Channel: new_relic_api.Channel{
@@ -24,7 +25,7 @@ func main() {
 
 	resp, err := c.CreateAlertChannels(body)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Fatal(err.Error())
 	}
 
 	fmt.Println(resp)

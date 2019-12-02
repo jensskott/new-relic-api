@@ -9,13 +9,6 @@ Implemented functions:
 
 * alert channels
 
-## Usage
-
-Create client:
-```go
-client := new_relic_api.New("your api key here")
-```
-
 ## Development
 
 Prepare environment: 

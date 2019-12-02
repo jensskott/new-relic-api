@@ -9,15 +9,21 @@ import (
 )
 
 type CreateAlertChannels struct {
-	Channel struct {
-		ID            string `json:"id"`
+	Channels []struct {
+		ID            int    `json:"id"`
 		Name          string `json:"name"`
 		Type          string `json:"type"`
-		Configuration string `json:"configuration"`
-		Links         struct {
-			PolicyIds []string `json:"policy_ids"`
+		Configuration struct {
+			IncludeJSONAttachment string `json:"include_json_attachment"`
+			Recipients            string `json:"recipients"`
+		} `json:"configuration"`
+		Links struct {
+			PolicyIds []interface{} `json:"policy_ids"`
 		} `json:"links"`
-	} `json:"channel"`
+	} `json:"channels"`
+	Links struct {
+		ChannelPolicyIds string `json:"channel.policy_ids"`
+	} `json:"links"`
 }
 
 type Payload struct {
