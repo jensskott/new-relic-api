@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func (s *Client) DeleteAlertChannels(id string) error {
+func (s *Client) DeleteAlertsChannels(id string) error {
 	fullUrl := fmt.Sprintf("%s/v2/alerts_channels/%s.json", *s.BaseUrl, id)
 
 	req, err := http.NewRequest("DELETE", fullUrl, nil)

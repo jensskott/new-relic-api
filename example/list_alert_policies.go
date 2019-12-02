@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -10,7 +11,16 @@ import (
 func main() {
 	// use go run get_alert_channels.go yourapikeyhere
 	c := new_relic_api.New(os.Args[1])
-	if err := c.DeleteAlertsChannels("2886965"); err != nil {
+
+	//resp, err := c.AlertsPolicies("HIgh-CPU-Usage-Prod-ISL-CA", "false")
+	//if err != nil {
+	//	log.Fatal(err.Error())
+	//}
+
+	resp, err := c.ListAlertsPolicies("", "")
+	if err != nil {
 		log.Fatal(err.Error())
 	}
+
+	fmt.Println(resp)
 }

@@ -17,13 +17,13 @@ func main() {
 	config["recipients"] = "test@massive.co"
 	config["include_json_attachment"] = "true"
 
-	body := new_relic_api.Payload{Channel: new_relic_api.Channel{
+	body := new_relic_api.CreateChannelsPayload{Channel: new_relic_api.Channel{
 		Name:          "Test",
 		Type:          "email",
 		Configuration: config,
 	}}
 
-	resp, err := c.CreateAlertChannels(body)
+	resp, err := c.CreateAlertsChannels(body)
 	if err != nil {
 		log.Fatal(err.Error())
 	}
