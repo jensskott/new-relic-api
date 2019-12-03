@@ -13,6 +13,7 @@ Implemented functions:
 * alerts policies
 * alerts conditions
 * alerts nrql conditions
+* alerts plugins conditions
 
 ## Development
 
