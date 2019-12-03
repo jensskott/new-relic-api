@@ -3,13 +3,16 @@
 ## Description
 
 Package for accessing the new relic API in golang.  
-Examples in the example folder
+Examples in the example folder.
+
+**Still WIP**
 
 Implemented functions:
 
-* alert channels
-* alert policies
-* alert conditions
+* alerts channels
+* alerts policies
+* alerts conditions
+* alerts nrql conditions
 
 ## Development
 

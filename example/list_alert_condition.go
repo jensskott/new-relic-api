@@ -10,7 +10,7 @@ import (
 
 func main() {
 	c := new_relic_api.New(os.Args[1])
-	resp, err := c.ListAlertsConditions("73380")
+	resp, err := c.ListAlertsConditions("1234")
 	if err != nil {
 		log.Fatal(err.Error())
 	}

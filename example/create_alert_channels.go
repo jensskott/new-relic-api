@@ -14,7 +14,7 @@ func main() {
 
 	config := make(map[string]string)
 
-	config["recipients"] = "test@massive.co"
+	config["recipients"] = "test@goole.com"
 	config["include_json_attachment"] = "true"
 
 	body := new_relic_api.ChannelsPayload{Channel: new_relic_api.Channel{
