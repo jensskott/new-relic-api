@@ -12,7 +12,7 @@ func main() {
 	// use go run get_alert_channels.go yourapikeyhere
 	c := new_relic_api.New(os.Args[1])
 
-	resp, err := c.ListAlertsPolicies("isl", "false")
+	resp, err := c.ListAlertsPolicies("test-api-client", "false")
 	if err != nil {
 		log.Fatal(err.Error())
 	}

@@ -8,14 +8,14 @@ import (
 	"net/http"
 )
 
-func (s *Client) CreateAlertsConditions(payload AlertsConditionsPayload) (AlertsConditions, error) {
+func (s *Client) CreateAlertsConditions(payload AlertsConditionsPayload, id string) (AlertsConditions, error) {
 	var data AlertsConditions
 
 	if err := payload.validate(); err != nil {
 		return AlertsConditions{}, err
 	}
 
-	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions.json", s.BaseUrl)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions/policies/%s.json", s.BaseUrl, id)
 
 	body, err := json.Marshal(payload)
 	if err != nil {

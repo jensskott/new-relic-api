@@ -22,7 +22,7 @@ type AlertsConditions struct {
 type AlertsConditionsPayload struct {
 	Condition Condition `json:"condition"`
 }
-type Terms struct {
+type AlertsConditionsTerms struct {
 	Duration     string `json:"duration"`
 	Operator     string `json:"operator"`
 	Priority     string `json:"priority"`
@@ -34,14 +34,14 @@ type UserDefined struct {
 	ValueFunction string `json:"value_function"`
 }
 type Condition struct {
-	Type                string      `json:"type"`
-	Name                string      `json:"name"`
-	Enabled             string      `json:"enabled"`
-	Entities            []string    `json:"entities"`
-	Metric              string      `json:"metric"`
-	GcMetric            string      `json:"gc_metric"`
-	ConditionScope      string      `json:"condition_scope"`
-	ViolationCloseTimer string      `json:"violation_close_timer"`
-	Terms               []Terms     `json:"terms"`
-	UserDefined         UserDefined `json:"user_defined"`
+	Type                string                  `json:"type"`
+	Name                string                  `json:"name"`
+	Enabled             string                  `json:"enabled"`
+	Entities            []string                `json:"entities"`
+	Metric              string                  `json:"metric"`
+	GcMetric            string                  `json:"gc_metric"`
+	ConditionScope      string                  `json:"condition_scope"`
+	ViolationCloseTimer string                  `json:"violation_close_timer"`
+	Terms               []AlertsConditionsTerms `json:"terms"`
+	UserDefined         UserDefined             `json:"user_defined"`
 }
