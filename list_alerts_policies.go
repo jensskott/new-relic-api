@@ -11,9 +11,9 @@ func (s *Client) ListAlertsPolicies(name, exactMatch string) (AlertsPolicies, er
 	var fullUrl string
 
 	if name != "" && exactMatch != "" {
-		fullUrl = fmt.Sprintf("%s/v2/alerts_policies.json?filter[name]=%s&filter[exact_match]=%s", *s.BaseUrl, name, exactMatch)
+		fullUrl = fmt.Sprintf("%s/v2/alerts_policies.json?filter[name]=%s&filter[exact_match]=%s", s.BaseUrl, name, exactMatch)
 	} else {
-		fullUrl = fmt.Sprintf("%s/v2/alerts_policies.json", *s.BaseUrl)
+		fullUrl = fmt.Sprintf("%s/v2/alerts_policies.json", s.BaseUrl)
 	}
 
 	req, err := http.NewRequest("GET", fullUrl, nil)

@@ -9,7 +9,7 @@ import (
 func (s *Client) ListAlertsConditions(id string) (AlertsConditions, error) {
 	var data AlertsConditions
 
-	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions.json?policy_id=%s", *s.BaseUrl, id)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions.json?policy_id=%s", s.BaseUrl, id)
 
 	req, err := http.NewRequest("GET", fullUrl, nil)
 	if err != nil {

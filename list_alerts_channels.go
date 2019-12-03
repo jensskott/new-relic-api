@@ -9,7 +9,7 @@ import (
 func (s *Client) ListAlertsChannels() (AlertsChannels, error) {
 	var data AlertsChannels
 
-	fullUrl := fmt.Sprintf("%s/v2/alerts_channels.json", *s.BaseUrl)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_channels.json", s.BaseUrl)
 
 	req, err := http.NewRequest("GET", fullUrl, nil)
 	if err != nil {

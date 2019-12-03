@@ -15,7 +15,7 @@ func (s *Client) CreateAlertsPolicies(payload AlertsPoliciesPayload) (AlertsPoli
 		return AlertsPolicies{}, err
 	}
 
-	fullUrl := fmt.Sprintf("%s/v2/alerts_policies.json", *s.BaseUrl)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_policies.json", s.BaseUrl)
 
 	body, err := json.Marshal(payload)
 	if err != nil {

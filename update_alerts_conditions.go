@@ -14,7 +14,7 @@ func (s *Client) UpdateAlertsConditions(payload AlertsConditionsPayload) (Alerts
 		return AlertsConditions{}, err
 	}
 
-	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions.json", *s.BaseUrl)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions.json", s.BaseUrl)
 
 	body, err := json.Marshal(payload)
 	if err != nil {

@@ -6,7 +6,7 @@ import (
 )
 
 func (s *Client) DeleteAlertsConditions(id string) error {
-	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions/%s.json", *s.BaseUrl, id)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_conditions/%s.json", s.BaseUrl, id)
 
 	req, err := http.NewRequest("DELETE", fullUrl, nil)
 	if err != nil {

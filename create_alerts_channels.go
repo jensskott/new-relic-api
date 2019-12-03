@@ -15,7 +15,7 @@ func (s *Client) CreateAlertsChannels(payload ChannelsPayload) (AlertsChannels, 
 		return AlertsChannels{}, err
 	}
 
-	fullUrl := fmt.Sprintf("%s/v2/alerts_channels.json", *s.BaseUrl)
+	fullUrl := fmt.Sprintf("%s/v2/alerts_channels.json", s.BaseUrl)
 
 	body, err := json.Marshal(payload)
 	if err != nil {
