@@ -27,6 +27,7 @@ type AlertsPluginsConditions struct {
 type AlertsPluginsConditionsPayload struct {
 	PluginsCondition PluginsCondition `json:"plugins_condition"`
 }
+
 type AlertsPluginsConditionsTerms struct {
 	Duration     string `json:"duration"`
 	Operator     string `json:"operator"`
@@ -34,10 +35,12 @@ type AlertsPluginsConditionsTerms struct {
 	Threshold    string `json:"threshold"`
 	TimeFunction string `json:"time_function"`
 }
+
 type Plugin struct {
 	ID   string `json:"id"`
 	GUID string `json:"guid"`
 }
+
 type PluginsCondition struct {
 	Name              string                         `json:"name"`
 	Enabled           string                         `json:"enabled"`

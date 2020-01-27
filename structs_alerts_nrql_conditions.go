@@ -24,6 +24,7 @@ type AlertsNrqlConditions struct {
 type AlertsNrqlConditionsPayload struct {
 	NrqlCondition NrqlCondition `json:"nrql_condition"`
 }
+
 type AlertsNrqlConditionsTerms struct {
 	Duration     string `json:"duration"`
 	Operator     string `json:"operator"`
@@ -31,10 +32,12 @@ type AlertsNrqlConditionsTerms struct {
 	Threshold    string `json:"threshold"`
 	TimeFunction string `json:"time_function"`
 }
+
 type Nrql struct {
 	Query      string `json:"query"`
 	SinceValue string `json:"since_value"`
 }
+
 type NrqlCondition struct {
 	Name                      string                      `json:"name"`
 	RunbookURL                string                      `json:"runbook_url"`

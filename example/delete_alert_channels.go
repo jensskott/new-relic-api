@@ -10,7 +10,7 @@ import (
 func main() {
 	// use go run get_alert_channels.go yourapikeyhere
 	c := new_relic_api.New(os.Args[1])
-	if err := c.DeleteAlertsChannels("1234"); err != nil {
+	if err := c.DeleteAlertsChannels("3101329"); err != nil {
 		log.Fatal(err.Error())
 	}
 }

@@ -22,6 +22,7 @@ type AlertsConditions struct {
 type AlertsConditionsPayload struct {
 	Condition Condition `json:"condition"`
 }
+
 type AlertsConditionsTerms struct {
 	Duration     string `json:"duration"`
 	Operator     string `json:"operator"`
@@ -29,10 +30,12 @@ type AlertsConditionsTerms struct {
 	Threshold    string `json:"threshold"`
 	TimeFunction string `json:"time_function"`
 }
+
 type UserDefined struct {
 	Metric        string `json:"metric"`
 	ValueFunction string `json:"value_function"`
 }
+
 type Condition struct {
 	Type                string                  `json:"type"`
 	Name                string                  `json:"name"`

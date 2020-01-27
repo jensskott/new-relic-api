@@ -11,7 +11,7 @@ type Client struct {
 	BaseUrl string
 	ApiKey  string
 
-	httpClient *http.Client
+	HttpClient *http.Client
 }
 
 func New(apiKey string) *Client {
@@ -22,7 +22,7 @@ func New(apiKey string) *Client {
 	return &Client{
 		BaseUrl:    "https://api.newrelic.com",
 		ApiKey:     apiKey,
-		httpClient: h,
+		HttpClient: h,
 	}
 }
 
@@ -30,7 +30,7 @@ func (s *Client) doRequest(req *http.Request) ([]byte, error) {
 	req.Header.Set("X-Api-Key", s.ApiKey)
 	req.Header.Set("content-type", "application/json")
 
-	resp, err := s.httpClient.Do(req)
+	resp, err := s.HttpClient.Do(req)
 	if err != nil {
 		return nil, err
 	}
